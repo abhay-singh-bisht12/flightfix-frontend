@@ -9,6 +9,7 @@ import DashboardPlaceholder from '../pages/DashboardPlaceholder';
 import AircraftPage from '../pages/AircraftPage';
 import MaintenancePage from '../pages/MaintenancePage';
 import WorkOrdersPage from '../pages/WorkOrdersPage';
+import PartsPage from '../pages/PartsPage';
 import ModulePlaceholder from '../pages/ModulePlaceholder';
 import NotFoundPage from '../pages/NotFoundPage';
 
@@ -60,11 +61,20 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        {/* Module 4: Spare Parts Inventory */}
+        <Route
+          path="/parts"
+          element={
+            <ProtectedRoute>
+              <PartsPage />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/inventory"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <PartsPage />
             </ProtectedRoute>
           }
         />
