@@ -15,7 +15,8 @@ import {
   WifiOff,
   UserPlus,
   Shield,
-  FileCheck2
+  FileCheck2,
+  Truck
 } from 'lucide-react';
 import { checkBackendHealth } from '../../api/health';
 import { useAuth, ROLE_LABELS } from '../../context/AuthContext';
@@ -52,6 +53,7 @@ export default function Navbar() {
     { name: 'Execution', path: '/execution', icon: FileCheck2 },
     { name: 'Inventory', path: '/inventory', icon: Package },
     { name: 'Compliance', path: '/compliance', icon: ShieldCheck },
+    { name: 'Supply Chain', path: '/supply-chain', icon: Truck },
   ];
 
   const handleLogout = () => {

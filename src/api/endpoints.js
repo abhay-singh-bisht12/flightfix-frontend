@@ -63,6 +63,9 @@ export const ENDPOINTS = {
     SUPPLIER_DETAIL: (id) => `/supply-chain/suppliers/${id}/`,
     PURCHASE_ORDERS: '/supply-chain/purchase-orders/',
     PO_DETAIL: (id) => `/supply-chain/purchase-orders/${id}/`,
+    PO_RECEIVE: (id) => `/supply-chain/purchase-orders/${id}/receive/`,
+    PO_ITEMS: '/supply-chain/purchase-order-items/',
+    PO_ITEM_DETAIL: (id) => `/supply-chain/purchase-order-items/${id}/`,
   },
 
   MOBILE: {

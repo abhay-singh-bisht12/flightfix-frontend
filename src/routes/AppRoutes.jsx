@@ -12,6 +12,7 @@ import WorkOrdersPage from '../pages/WorkOrdersPage';
 import PartsPage from '../pages/PartsPage';
 import ExecutionPage from '../pages/ExecutionPage';
 import CompliancePage from '../pages/CompliancePage';
+import SupplyChainPage from '../pages/SupplyChainPage';
 import ModulePlaceholder from '../pages/ModulePlaceholder';
 import NotFoundPage from '../pages/NotFoundPage';
 
@@ -98,11 +99,12 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        {/* Module 7: ERP & Supply Chain Management */}
         <Route
           path="/supply-chain"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <SupplyChainPage />
             </ProtectedRoute>
           }
         />
