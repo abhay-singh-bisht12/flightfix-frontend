@@ -16,7 +16,9 @@ import {
   UserPlus,
   Shield,
   FileCheck2,
-  Truck
+  Truck,
+  LayoutDashboard,
+  TrendingUp
 } from 'lucide-react';
 import { checkBackendHealth } from '../../api/health';
 import { useAuth, ROLE_LABELS } from '../../context/AuthContext';
@@ -46,7 +48,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Dashboard', path: '/dashboard', icon: BarChart3 },
+    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Aircraft Fleet', path: '/aircraft', icon: Plane },
     { name: 'Maintenance', path: '/maintenance', icon: Wrench },
     { name: 'Work Orders', path: '/work-orders', icon: Activity },
@@ -54,6 +56,7 @@ export default function Navbar() {
     { name: 'Inventory', path: '/inventory', icon: Package },
     { name: 'Compliance', path: '/compliance', icon: ShieldCheck },
     { name: 'Supply Chain', path: '/supply-chain', icon: Truck },
+    { name: 'Analytics', path: '/analytics', icon: TrendingUp },
   ];
 
   const handleLogout = () => {

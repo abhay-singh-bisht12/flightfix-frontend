@@ -13,6 +13,7 @@ import PartsPage from '../pages/PartsPage';
 import ExecutionPage from '../pages/ExecutionPage';
 import CompliancePage from '../pages/CompliancePage';
 import SupplyChainPage from '../pages/SupplyChainPage';
+import AnalyticsPage from '../pages/AnalyticsPage';
 import ModulePlaceholder from '../pages/ModulePlaceholder';
 import NotFoundPage from '../pages/NotFoundPage';
 
@@ -120,7 +121,7 @@ export default function AppRoutes() {
           path="/analytics"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <AnalyticsPage />
             </ProtectedRoute>
           }
         />

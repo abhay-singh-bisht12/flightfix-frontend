@@ -80,9 +80,15 @@ export const ENDPOINTS = {
 
   ANALYTICS: {
     DASHBOARD: '/analytics/dashboard/',
-    FLEET_STATUS: '/analytics/fleet-status/',
-    MAINTENANCE_METRICS: '/analytics/maintenance-metrics/',
+    MAINTENANCE_SUMMARY: '/analytics/maintenance-summary/',
+    AIRCRAFT_SUMMARY: '/analytics/aircraft-summary/',
+    INVENTORY_SUMMARY: '/analytics/inventory-summary/',
     COMPLIANCE_SUMMARY: '/analytics/compliance-summary/',
+    SUPPLY_CHAIN_SUMMARY: '/analytics/supply-chain-summary/',
+    TECHNICIAN_PERFORMANCE: '/analytics/technician-performance/',
+    // Backwards-compatible aliases
+    FLEET_STATUS: '/analytics/aircraft-summary/',
+    MAINTENANCE_METRICS: '/analytics/maintenance-summary/',
   },
 };
 
