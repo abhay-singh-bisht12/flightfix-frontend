@@ -10,6 +10,7 @@ import AircraftPage from '../pages/AircraftPage';
 import MaintenancePage from '../pages/MaintenancePage';
 import WorkOrdersPage from '../pages/WorkOrdersPage';
 import PartsPage from '../pages/PartsPage';
+import ExecutionPage from '../pages/ExecutionPage';
 import ModulePlaceholder from '../pages/ModulePlaceholder';
 import NotFoundPage from '../pages/NotFoundPage';
 
@@ -78,11 +79,12 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        {/* Module 5: Maintenance Execution & Documentation */}
         <Route
           path="/execution"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <ExecutionPage />
             </ProtectedRoute>
           }
         />

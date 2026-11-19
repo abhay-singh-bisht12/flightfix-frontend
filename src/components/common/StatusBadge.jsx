@@ -17,6 +17,12 @@ const statusStyles = {
   out_of_stock: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
   non_compliant: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
   discontinued: 'bg-slate-700/50 text-slate-400 border-slate-600',
+  paused: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+  cancelled: 'bg-slate-700/50 text-slate-400 border-slate-600',
+  signed: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  verified: 'bg-indigo-500/15 text-indigo-400 border-indigo-500/30',
+  rejected: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
+  draft: 'bg-slate-700/50 text-slate-400 border-slate-600',
   default: 'bg-slate-700/50 text-slate-300 border-slate-600',
 };
 

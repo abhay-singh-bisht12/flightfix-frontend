@@ -14,7 +14,8 @@ import {
   Wifi,
   WifiOff,
   UserPlus,
-  Shield
+  Shield,
+  FileCheck2
 } from 'lucide-react';
 import { checkBackendHealth } from '../../api/health';
 import { useAuth, ROLE_LABELS } from '../../context/AuthContext';
@@ -48,6 +49,7 @@ export default function Navbar() {
     { name: 'Aircraft Fleet', path: '/aircraft', icon: Plane },
     { name: 'Maintenance', path: '/maintenance', icon: Wrench },
     { name: 'Work Orders', path: '/work-orders', icon: Activity },
+    { name: 'Execution', path: '/execution', icon: FileCheck2 },
     { name: 'Inventory', path: '/inventory', icon: Package },
     { name: 'Compliance', path: '/compliance', icon: ShieldCheck },
   ];
