@@ -53,6 +53,8 @@ export const ENDPOINTS = {
   COMPLIANCE: {
     REQUIREMENTS: '/compliance/requirements/',
     REQUIREMENT_DETAIL: (id) => `/compliance/requirements/${id}/`,
+    RECORDS: '/compliance/records/',
+    RECORD_DETAIL: (id) => `/compliance/records/${id}/`,
     OVERDUE: '/compliance/requirements/overdue/',
   },
 
