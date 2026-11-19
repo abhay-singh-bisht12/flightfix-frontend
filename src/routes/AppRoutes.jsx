@@ -6,6 +6,8 @@ import LandingPage from '../pages/LandingPage';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 import DashboardPlaceholder from '../pages/DashboardPlaceholder';
+import AircraftPage from '../pages/AircraftPage';
+import MaintenancePage from '../pages/MaintenancePage';
 import ModulePlaceholder from '../pages/ModulePlaceholder';
 import NotFoundPage from '../pages/NotFoundPage';
 
@@ -28,23 +30,27 @@ export default function AppRoutes() {
           }
         />
 
-        {/* Protected MRO Modules */}
+        {/* Module 1: Aircraft & Equipment Management */}
         <Route
           path="/aircraft"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <AircraftPage />
             </ProtectedRoute>
           }
         />
+
+        {/* Module 2: Maintenance Planning & Scheduling */}
         <Route
           path="/maintenance"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <MaintenancePage />
             </ProtectedRoute>
           }
         />
+
+        {/* Future Modules (Workspaces ready) */}
         <Route
           path="/work-orders"
           element={

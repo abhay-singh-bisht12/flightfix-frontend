@@ -16,14 +16,18 @@ export const ENDPOINTS = {
   AIRCRAFT: {
     LIST: '/aircraft/',
     DETAIL: (id) => `/aircraft/${id}/`,
-    MODELS: '/aircraft/models/',
   },
 
-  MAINTENANCE_PLANNING: {
-    SCHEDULES: '/maintenance-planning/schedules/',
-    SCHEDULE_DETAIL: (id) => `/maintenance-planning/schedules/${id}/`,
-    TASKS: '/maintenance-planning/tasks/',
-    TASK_DETAIL: (id) => `/maintenance-planning/tasks/${id}/`,
+  EQUIPMENT: {
+    LIST: '/equipment/',
+    DETAIL: (id) => `/equipment/${id}/`,
+  },
+
+  MAINTENANCE: {
+    SCHEDULES: '/maintenance/schedules/',
+    SCHEDULE_DETAIL: (id) => `/maintenance/schedules/${id}/`,
+    TASKS: '/maintenance/tasks/',
+    TASK_DETAIL: (id) => `/maintenance/tasks/${id}/`,
   },
 
   WORK_ORDERS: {
