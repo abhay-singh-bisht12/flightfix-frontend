@@ -60,9 +60,13 @@ export const ENDPOINTS = {
   },
 
   MOBILE: {
-    TASKS: '/mobile/tasks/',
-    TASK_DETAIL: (id) => `/mobile/tasks/${id}/`,
-    EXECUTE_STEP: (id) => `/mobile/tasks/${id}/execute/`,
+    DASHBOARD: '/mobile/dashboard/',
+    MY_TASKS: '/mobile/my-tasks/',
+    MY_WORK_ORDERS: '/mobile/my-work-orders/',
+    MY_EXECUTIONS: '/mobile/my-executions/',
+    MY_AIRCRAFT: '/mobile/my-aircraft/',
+    MY_COMPLIANCE: '/mobile/my-compliance/',
+    AVAILABLE_PARTS: '/mobile/available-parts/',
   },
 
   ANALYTICS: {
