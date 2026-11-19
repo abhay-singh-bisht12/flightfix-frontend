@@ -8,6 +8,7 @@ import RegisterPage from '../pages/RegisterPage';
 import DashboardPlaceholder from '../pages/DashboardPlaceholder';
 import AircraftPage from '../pages/AircraftPage';
 import MaintenancePage from '../pages/MaintenancePage';
+import WorkOrdersPage from '../pages/WorkOrdersPage';
 import ModulePlaceholder from '../pages/ModulePlaceholder';
 import NotFoundPage from '../pages/NotFoundPage';
 
@@ -50,12 +51,12 @@ export default function AppRoutes() {
           }
         />
 
-        {/* Future Modules (Workspaces ready) */}
+        {/* Module 3: Work Order Management */}
         <Route
           path="/work-orders"
           element={
             <ProtectedRoute>
-              <ModulePlaceholder />
+              <WorkOrdersPage />
             </ProtectedRoute>
           }
         />
