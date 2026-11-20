@@ -61,11 +61,11 @@ export default function TechnicianDashboard({ data }) {
 
           <div className="flex items-center space-x-2">
             <Link
-              to="/mobile"
+              to="/execution"
               className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs shadow-lg shadow-blue-600/30 transition-colors"
             >
-              <SlidersHorizontal className="w-3.5 h-3.5" />
-              <span>Mobile Touch Portal</span>
+              <Wrench className="w-3.5 h-3.5" />
+              <span>Execution Records & Sign-Off</span>
             </Link>
           </div>
         </div>

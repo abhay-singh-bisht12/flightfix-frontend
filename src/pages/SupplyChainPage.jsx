@@ -187,7 +187,7 @@ export default function SupplyChainPage() {
   const oemCount = suppliersList.filter((s) => s.supplier_type === 'OEM').length;
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-in fade-in duration-300">
+    <div className="space-y-6 animate-in fade-in duration-300">
       {/* Toast Notification */}
       {toastMsg && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center space-x-2 bg-emerald-500/95 text-white px-4 py-3 rounded-xl shadow-xl backdrop-blur-md animate-in slide-in-from-bottom-5">
@@ -197,16 +197,16 @@ export default function SupplyChainPage() {
       )}
 
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center space-x-3 mb-1">
-            <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-              <Truck className="w-6 h-6" />
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
+        <div className="space-y-1">
+          <div className="flex items-center space-x-2.5">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <Truck className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">ERP & Supply Chain</h1>
-              <p className="text-sm text-slate-400">
-                Manage commercial vendors, procurement purchase orders, and warehouse goods receipts
+              <h1 className="text-2xl font-extrabold text-white tracking-tight">ERP & Supply Chain</h1>
+              <p className="text-xs text-slate-400">
+                Commercial aviation vendors, procurement purchase orders, and goods receipts
               </p>
             </div>
           </div>
@@ -215,8 +215,8 @@ export default function SupplyChainPage() {
         <div className="flex items-center space-x-3">
           <button
             onClick={() => (activeTab === 'orders' ? fetchPurchaseOrders(ordersPage) : fetchSuppliers(suppliersPage))}
-            className="p-2.5 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-xl text-slate-300 hover:text-white transition shadow-sm"
-            title="Refresh"
+            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-colors"
+            title="Refresh Supply Chain Data"
           >
             <RefreshCw
               className={`w-4 h-4 ${
@@ -231,7 +231,7 @@ export default function SupplyChainPage() {
                 setSelectedPOForEdit(null);
                 setIsPOModalOpen(true);
               }}
-              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center space-x-2"
+              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02]"
             >
               <Plus className="w-4 h-4" />
               <span>Create Purchase Order</span>
@@ -244,7 +244,7 @@ export default function SupplyChainPage() {
                 setSelectedSupplierForEdit(null);
                 setIsSupplierModalOpen(true);
               }}
-              className="px-4 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-sm font-medium rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center space-x-2"
+              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02]"
             >
               <Plus className="w-4 h-4" />
               <span>Register Vendor</span>

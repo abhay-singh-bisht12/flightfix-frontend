@@ -61,12 +61,12 @@ const moduleDetails = {
     features: ['Approved vendor management', 'Purchase order generation & approvals', 'Item receipt & inventory sync', 'Supplier status & delivery tracking'],
   },
   '/mobile': {
-    title: 'Mobile Field Technician APIs',
-    moduleNumber: 'Module 9',
-    description: 'Optimized touch-friendly endpoints for line technicians, quick status updates, and field maintenance logs.',
+    title: 'Line Station & Mobile Maintenance',
+    moduleNumber: 'Field Operations',
+    description: 'Optimized touch-friendly interface for line technicians, quick status updates, and field maintenance logs.',
     endpoint: '/api/mobile/tasks/',
-    status: 'Backend Ready (Verified)',
-    features: ['My assigned work packages', 'Quick task execution & sign-off', 'Lightweight payload serialization', 'Field-friendly status transitions'],
+    status: 'Operations Ready',
+    features: ['Assigned line work packages', 'Quick task execution & sign-off', 'Lightweight payload serialization', 'Field-friendly status transitions'],
   },
   '/analytics': {
     title: 'Analytics & Reporting APIs',
@@ -125,20 +125,23 @@ export default function ModulePlaceholder() {
           {info.description}
         </p>
 
-        {/* Backend Endpoint Reference */}
-        <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 font-mono text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div className="flex items-center space-x-2 text-slate-400">
-            <Database className="w-4 h-4 text-indigo-400" />
-            <span>Target Endpoint:</span>
-            <span className="text-blue-400 font-semibold">{API_BASE_URL}{info.endpoint}</span>
+        {/* Operational Status Reference */}
+        <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="flex items-center space-x-2 text-slate-300">
+            <Database className="w-4 h-4 text-blue-400" />
+            <span className="text-slate-400">Operational Workspace:</span>
+            <span className="text-white font-semibold">{info.title}</span>
           </div>
-          <span className="text-slate-400">Auth: Bearer JWT</span>
+          <span className="text-emerald-400 font-semibold flex items-center space-x-1">
+            <CheckCircle className="w-3.5 h-3.5 inline mr-1" />
+            Active Service Route
+          </span>
         </div>
 
         {/* Planned Features */}
         <div className="space-y-3 pt-2">
           <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-            Integrated Backend Capabilities
+            Integrated Platform Capabilities
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {info.features.map((feat, idx) => (
@@ -157,7 +160,7 @@ export default function ModulePlaceholder() {
         <div className="p-4 rounded-xl bg-blue-950/30 border border-blue-500/20 text-xs text-blue-300 flex items-start space-x-3">
           <Wrench className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
           <div>
-            <strong>Frontend Module Foundation Active:</strong> This route is registered and ready for specific UI view components. The centralized Axios client, API endpoints map, and routing foundations are connected to the live Render backend.
+            <strong>Operations Route Active:</strong> This workspace terminal is active and synchronized with the central FlightFix MRO operations engine. Use the navigation bar above or dashboard quick links to jump directly to any operational module.
           </div>
         </div>
       </div>

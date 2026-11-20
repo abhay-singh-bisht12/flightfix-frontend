@@ -124,7 +124,7 @@ export default function PartsPage() {
   const outOfStockCount = partsList.filter((p) => p.status === 'OUT_OF_STOCK' || p.quantity_in_stock === 0).length;
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-in fade-in duration-300">
+    <div className="space-y-6 animate-in fade-in duration-300">
       {/* Toast Notification */}
       {toastMsg && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center space-x-2 bg-emerald-500/95 text-white px-4 py-3 rounded-xl shadow-xl backdrop-blur-md animate-in slide-in-from-bottom-5">
@@ -134,16 +134,16 @@ export default function PartsPage() {
       )}
 
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center space-x-3 mb-1">
-            <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
-              <Package className="w-6 h-6" />
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
+        <div className="space-y-1">
+          <div className="flex items-center space-x-2.5">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
+              <Package className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">Spare Parts Inventory</h1>
-              <p className="text-sm text-slate-400">
-                Manage aircraft components, rotables, consumables, and stock audit logs
+              <h1 className="text-2xl font-extrabold text-white tracking-tight">Spare Parts Inventory</h1>
+              <p className="text-xs text-slate-400">
+                Aircraft components, rotables, consumables, stock levels, and warehouse bins
               </p>
             </div>
           </div>
@@ -152,10 +152,10 @@ export default function PartsPage() {
         <div className="flex items-center space-x-3">
           <button
             onClick={() => fetchParts(currentPage)}
-            className="p-2.5 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-xl text-slate-300 hover:text-white transition shadow-sm"
+            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-colors"
             title="Refresh Inventory"
           >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-blue-400' : ''}`} />
+            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-teal-400' : ''}`} />
           </button>
 
           {canModify && (
@@ -164,7 +164,7 @@ export default function PartsPage() {
                 setSelectedPartForEdit(null);
                 setIsPartModalOpen(true);
               }}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-xl shadow-lg shadow-blue-500/25 transition flex items-center space-x-2"
+              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02]"
             >
               <Plus className="w-4 h-4" />
               <span>Add Spare Part</span>

@@ -9,7 +9,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(location.state?.username || '');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -94,6 +94,17 @@ export default function LoginPage() {
         {/* Card */}
         <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-sky-500"></div>
+
+          {/* Registration Success Banner */}
+          {location.state?.registrationSuccess && !errorMessage && (
+            <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-300 flex items-start space-x-3 animate-in fade-in">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+              <div>
+                <span className="font-semibold block text-emerald-200">Account created successfully!</span>
+                <span className="text-slate-300">Please sign in with your password to access your FlightFix workspace.</span>
+              </div>
+            </div>
+          )}
 
           {/* Error Banner */}
           {errorMessage && (

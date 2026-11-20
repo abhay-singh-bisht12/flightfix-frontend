@@ -58,7 +58,6 @@ export default function AnalyticsPage() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState(null);
-  const [latency, setLatency] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
   const [exportMenuOpen, setExportMenuOpen] = useState(false);
 
@@ -72,8 +71,6 @@ export default function AnalyticsPage() {
       setLoading(true);
     }
     setError(null);
-
-    const startTime = performance.now();
 
     try {
       const [
@@ -94,8 +91,6 @@ export default function AnalyticsPage() {
         analyticsApi.getTechnicianPerformance(),
       ]);
 
-      const elapsed = Math.round(performance.now() - startTime);
-      setLatency(elapsed);
       setDashboardData(dashRes);
       setMaintenanceData(maintRes);
       setAircraftData(airRes);
@@ -106,7 +101,7 @@ export default function AnalyticsPage() {
       setLastUpdated(new Date().toLocaleTimeString());
     } catch (err) {
       console.error('Failed to load analytics dossier:', err);
-      let msg = 'Unable to connect to live analytics telemetry.';
+      let msg = 'Unable to connect to analytics services.';
       if (err.response?.status === 403) {
         msg = 'Access Forbidden (403): You are not authorized to view management analytics.';
       } else if (err.response?.status === 401) {
@@ -194,7 +189,7 @@ export default function AnalyticsPage() {
             </h2>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
               Access to cross-fleet executive reporting, financial procurement metrics, regulatory compliance summaries,
-              and technician performance telemetry is restricted exclusively to <strong>Admin</strong>,{' '}
+              and technician performance metrics are restricted exclusively to <strong>Admin</strong>,{' '}
               <strong>Safety Officer</strong>, and <strong>Contracts Manager</strong> credentials.
             </p>
             <div className="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
@@ -241,23 +236,22 @@ export default function AnalyticsPage() {
               <h1 className="text-2xl font-black text-white tracking-tight flex items-center space-x-2">
                 <span>Analytics & Reporting</span>
                 <span className="text-[11px] bg-blue-500/15 text-blue-400 font-semibold px-2.5 py-0.5 rounded-full border border-blue-500/30">
-                  Step 10 Ready
+                  Executive Intelligence
                 </span>
               </h1>
               <p className="text-xs text-slate-400">
-                Executive intelligence, maintenance reliability KPIs, regulatory audits, and supply chain telemetry
+                Executive intelligence, maintenance reliability KPIs, regulatory audits, and supply chain analytics
               </p>
             </div>
           </div>
         </div>
 
-        {/* Action Controls: Refresh, Latency, Export */}
+        {/* Action Controls: Refresh, Export */}
         <div className="flex items-center flex-wrap gap-2.5">
-          {latency !== null && (
-            <span className="hidden sm:inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-slate-800 text-[11px] font-mono text-slate-300 border border-slate-700">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>{latency}ms</span>
-              {lastUpdated && <span className="text-slate-400">&bull; {lastUpdated}</span>}
+          {lastUpdated && (
+            <span className="hidden sm:inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-slate-800 text-[11px] text-slate-300 border border-slate-700">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              <span>Updated {lastUpdated}</span>
             </span>
           )}
 
@@ -357,7 +351,7 @@ export default function AnalyticsPage() {
         <div className="py-24 flex flex-col items-center justify-center space-y-4">
           <div className="w-12 h-12 rounded-full border-4 border-blue-500/20 border-t-blue-500 animate-spin" />
           <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold font-mono">
-            Loading live operational telemetry from backend...
+            Loading operational metrics & executive analytics...
           </span>
         </div>
       ) : (

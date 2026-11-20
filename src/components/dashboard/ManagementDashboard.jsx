@@ -62,7 +62,7 @@ export default function ManagementDashboard({ data }) {
     { name: 'Maintenance Execution', path: '/execution', icon: Wrench, label: `${total_maintenance_executions} Logs` },
     { name: 'Regulatory Compliance', path: '/compliance', icon: ShieldCheck, label: `${open_compliance_requirements} Directives` },
     { name: 'Supply Chain & Vendors', path: '/supply-chain', icon: Truck, label: `${active_suppliers} Active` },
-    { name: 'Field Tech Touch API', path: '/mobile', icon: SlidersHorizontal, label: 'Line Maintenance' },
+    { name: 'Analytics & Reporting', path: '/analytics', icon: TrendingUp, label: 'KPIs & Reports' },
   ];
 
   return (
